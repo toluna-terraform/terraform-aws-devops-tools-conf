@@ -1,0 +1,15 @@
+{
+  "ENV_NAME": "${ENV_NAME}",
+  "SHORT_ENV_NAME": "${SHORT_ENV_NAME}",
+  "TEAMS_HOOK": "https://outlook.office.com/webhook/6a75e543-60bb-4960-96da-8dcdb7531321@6393a87a-a738-497d-ace9-37b689400feb/IncomingWebhook/7ad2ed20cb2d4d4e9bc9d1b5b4d1c634/c4bf0498-8178-4d94-ac54-fc40380d03a5",
+  "KIBANA_TEAMS_URL": "https://tolunaonline.webhook.office.com/webhookb2/f0029aad-809b-475b-bf1d-2cb6c00f8f8b@6393a87a-a738-497d-ace9-37b689400feb/IncomingWebhook/fcade0b920c74c9a9733856aabd6722a/f4207050-8253-4b18-8483-ca5de92aaa20",
+  "INTERNAL_URL": "${SHORT_ENV_NAME}.tolunainsights-internal.com",
+  "EXTERNAL_URL": "tolunastart-${SHORT_ENV_NAME}.com",
+  "AWS_REGION": "us-east-1",
+  "ecs_hosts": [
+  ],
+  "ec2_hosts": [
+  ],
+  "rds_hosts": [
+  ]
+}
