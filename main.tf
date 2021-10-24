@@ -4,12 +4,12 @@ resource "aws_s3_bucket" "configuration_bucket" {
 
   tags = merge(
     var.tags,
-    map(
-      "Name", "s3-${var.env_name}-devops-tools-configurations",
-      "environment", var.env_name,
-      "application_role", "monitoring",
-      "created_by", "terraform"
-    )
+    tomap({
+      "Name"="s3-${var.env_name}-devops-tools-configurations",
+      "environment"=var.env_name,
+      "application_role"="monitoring",
+      "created_by"="terraform"
+    })
   )
 }
 
