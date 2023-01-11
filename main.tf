@@ -13,12 +13,7 @@ resource "aws_s3_bucket" "configuration_bucket" {
   )
 }
 
-// some of the existing conf files contains the short-env-name and some of the env-name, need to decide about convention.
-resource "aws_s3_bucket_object" "icinga_conf_file" {
-  bucket = aws_s3_bucket.configuration_bucket.bucket
-  key    = "icinga/${var.env_name}.json"
-  source = "${path.module}/files/icinga/short_env_name_here.json"
-}
+
 
 resource "aws_s3_bucket_object" "logstash_http" {
   bucket = aws_s3_bucket.configuration_bucket.bucket
