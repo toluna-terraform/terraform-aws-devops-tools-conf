@@ -1,6 +1,5 @@
 resource "aws_s3_bucket" "configuration_bucket" {
   bucket = "${var.env_name}-devops-tools-configurations"
-  acl    = "private"
 
   tags = merge(
     var.tags,
@@ -13,7 +12,12 @@ resource "aws_s3_bucket" "configuration_bucket" {
   )
 }
 
+resource "aws_s3_bucket_acl" "configuration_bucket_acl" {
+  depends_on = [aws_s3_bucket_ownership_controls.configuration_bucket]
 
+  bucket = aws_s3_bucket.configuration_bucket.id
+  acl    = "private"
+}
 
 resource "aws_s3_bucket_object" "logstash_http" {
   bucket = aws_s3_bucket.configuration_bucket.bucket
